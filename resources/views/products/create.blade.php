@@ -1,0 +1,18 @@
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h3>Tambah Produk</h3>
+
+    <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
+        @csrf
+
+        @include('products._form')
+
+        <button type="submit" class="btn btn-primary mt-3">
+            Simpan Produk
+        </button>
+    </form>
+</div>
+@endsection

@@ -37,8 +37,10 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Halaman Kategori:</h6>
-                        <a class="collapse-item" href="{{ route('categories.index')}}">Index</a>
-                        <a class="collapse-item" href="{{ route('categories.create')}}">Create</a>
+                        <a class="collapse-item" href="{{ route('categories.index')}}">Data Kategori</a>
+                        @if (auth()->user()?->role === 'admin')
+                            <a class="collapse-item" href="{{ route('categories.create')}}">Tambah Kategori</a>
+                        @endif
                     </div>
                 </div>
             </li>
@@ -54,8 +56,10 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="{{ route('products.index')}}">Index</a>
-                        <a class="collapse-item" href="{{ route('products.create')}}">Create</a>
+                        <a class="collapse-item" href="{{ route('products.index')}}">Data Produk</a>
+                        @if (auth()->user()?->role === 'admin')
+                            <a class="collapse-item" href="{{ route('products.create')}}">Tambah Produk</a>
+                        @endif
                     </div>
                 </div>
             </li>
